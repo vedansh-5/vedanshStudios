@@ -1,18 +1,18 @@
-blank_issues_enabled: false
 template_chooser:
-  default: 'feature_pr.md'
-  paths:
-    - template: 'feature.md'
-      name:  Feature Pull Request
-      description: Submit a new feature implementation
-      labels: ['feature']
-      
-    - template: 'bugfix.md'
-      name:  Bug Fix Pull Request
-      description: Submit a bug fix
-      labels: ['bug-fix']
-      
-    - template: 'docs.md'
-      name:  Documentation Pull Request
-      description: Submit documentation changes
-      labels: ['documentation']
+  enabled: true
+  default_template: feature.md
+  templates:
+    - name: Feature Pull Request
+      filename: feature.md
+      about: Submit a new feature implementation
+      labels: feature
+    
+    - name: Bug Fix Pull Request
+      filename: bugfix.md
+      about: Submit a bug fix
+      labels: bug-fix
+    
+    - name: Documentation Pull Request
+      filename: docs.md
+      about: Submit documentation changes
+      labels: documentation

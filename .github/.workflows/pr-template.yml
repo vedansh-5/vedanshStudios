@@ -1,0 +1,53 @@
+name: PR Template Workflow
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  pr_template:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set PR Template
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            // Get the PR title
+            const prTitle = context.payload.pull_request.title.toLowerCase();
+            
+            // Define template mapping
+            const templateMapping = {
+              'feature': '.github/PULL_REQUEST_TEMPLATE/feature.md',
+              'fix': '.github/PULL_REQUEST_TEMPLATE/bugfix.md',
+              'docs': '.github/PULL_REQUEST_TEMPLATE/docs.md'
+            };
+            
+            // Determine which template to use
+            let templatePath = null;
+            for (const [key, path] of Object.entries(templateMapping)) {
+              if (prTitle.includes(key)) {
+                templatePath = path;
+                break;
+              }
+            }
+            
+            if (templatePath && fs.existsSync(templatePath)) {
+              const template = fs.readFileSync(templatePath, 'utf8');
+              
+              // Update PR body if it's empty
+              if (!context.payload.pull_request.body) {
+                await github.rest.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: context.payload.pull_request.number,
+                  body: template
+                });
+              }
+            }
