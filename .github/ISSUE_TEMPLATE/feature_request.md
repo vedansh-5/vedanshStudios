@@ -1,33 +1,27 @@
 ---
-name: Feature or Enhancement Request
-about: Suggest a new feature or improvement to existing functionality
-title: '[Enhancement]: <short description>'
-labels: ['enhancement']
+name: Feature Request
+about: Suggest a new feature for AgentLabUI
+title: '[FEATURE] '
+labels: 'feature'
 assignees: ''
 ---
 
-##  Enhancement Summary
-A clear and concise description of the enhancement or feature you'd like to see.
+**Problem Statement**
+A clear and concise description of what problem this feature would solve.
 
-###  Motivation
-Why is this feature needed? What problem does it solve or what value does it add?
+**Proposed Solution**
+A clear and concise description of what you want to happen.
 
-###  Proposed Solution
-Describe your idea or how you would like it to work.
+**Alternative Solutions**
+A clear and concise description of any alternative solutions or features you've considered.
 
-###  Alternatives Considered
-Have you thought of any other ways to solve the problem?
+**User Story**
+As a [type of user], I want [an action] so that [benefit/value].
 
-###  Screenshots / Mockups
-If applicable, add visuals or examples of how this could look/work.
+**Acceptance Criteria**
+- [ ] Criterion 1
+- [ ] Criterion 2
+- [ ] Criterion 3
 
-###  Additional Context
-Any other relevant information or use cases.
-
----
-
-##  Contribution Checklist
-- [ ] I have checked existing enhancement requests
-- [ ] I have clearly described the proposed change
-- [ ] I have explained the motivation and context
-- [ ] I am willing to help implement this feature (optional)
+**Additional Context**
+Add any other context, mockups, or screenshots about the feature request here.
