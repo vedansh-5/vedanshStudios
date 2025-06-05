@@ -1,5 +1,5 @@
 # Pull Request Template Chooser
-
+Click the `Preview` tab and select a PR template:
 Please choose a template:
 
 - [Feature/Bug Fix](?expand=1&template=feature.md)
@@ -7,7 +7,5 @@ Please choose a template:
 - [Bug Fix](?expand=1&template=bugfix.md)
 
 [//]: # (This is a hack to enable template choice through links since GitHub doesn't natively support PR template choosing like it does for issues)
-[//]: # (The ?expand=1 parameter ensures the template content is expanded by default)
-[//]: # (Delete this section and template chooser text when submitting your PR)
 
 ---

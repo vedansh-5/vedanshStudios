@@ -1,37 +1,87 @@
----
-name: Tool Integration Issue
-about: Report issues with Gofannon tools or custom tool integrations
-title: '[TOOL] '
-labels: 'tool-integration'
-assignees: ''
----
+name: 🔧 Tool Integration Issue
+description: Report issues with Gofannon tools or custom tool integrations
+title: "[TOOL] <short description>"
+labels: ["tool-integration"]
+assignees: []
+projects: []
+body:
+- type: checkboxes
+  attributes:
+    label: Tool Type
+    description: What kind of tool is affected?
+    options:
+    - label: Gofannon Tool
+    - label: Custom Repository Tool
+    - label: ADK Built-in Tool
+    - label: Code Execution
 
-**Tool Type**
-- [ ] Gofannon Tool
-- [ ] Custom Repository Tool
-- [ ] ADK Built-in Tool
-- [ ] Code Execution
+- type: input
+  attributes:
+    label: Tool Name
+    placeholder: e.g., gofannon-html-exporter
+  validations:
+    required: true
 
-**Tool Details**
-- Tool Name:
-- Repository URL (if applicable):
-- Tool Manifest Path:
+- type: input
+  attributes:
+    label: Repository URL
+    placeholder: Optional - e.g., https://github.com/your-org/custom-tool
+  validations:
+    required: false
 
-**Integration Issue**
-Describe what's not working with the tool integration.
+- type: input
+  attributes:
+    label: Tool Manifest Path
+    placeholder: e.g., tools/my-tool/manifest.json
+  validations:
+    required: false
 
-**Tool Configuration**
-```json
-// Paste your tool configuration here (remove sensitive data)
-```
+- type: textarea
+  attributes:
+    label: Integration Issue
+    description: Describe what isn't working with the tool integration.
+    placeholder: Include symptoms, relevant operations, or tool behavior.
+  validations:
+    required: true
 
-**Error Messages**
-```
-Paste any error messages or logs here
-```
+- type: textarea
+  attributes:
+    label: Tool Configuration
+    description: Paste your tool configuration (remove secrets).
+    placeholder: |
+      ```json
+      {
+        "name": "my-tool",
+        "entry_point": "main.py"
+      }
+      ```
+    render: markdown
+  validations:
+    required: false
 
-**Expected Behavior**
-What you expected to happen.
+- type: textarea
+  attributes:
+    label: Error Messages
+    description: Paste any logs or stack traces.
+    placeholder: |
+      ```
+      Traceback (most recent call last):
+        File "main.py", line 10, in <module>
+      ```
+    render: markdown
+  validations:
+    required: false
 
-**Additional Context**
-Add any other context about the tool integration issue here.
+- type: textarea
+  attributes:
+    label: Expected Behavior
+    description: What did you expect the tool to do?
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: Additional Context
+    description: Add any other context, screenshots, or related issues here.
+  validations:
+    required: false
